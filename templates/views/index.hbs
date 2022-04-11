@@ -1,0 +1,31 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/images/weather.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="./js/app.js"></script>
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="main-content">
+      {{! <h1>Weather</h1> }}
+      {{!-- <h1>{{title}}</h1> --}}
+      {{>header}}
+      <p>Created by: {{Name}}</p>
+      {{!-- <img class="portrait" src="./images/beauty rain.jpg" alt="Beauty Rain" /> --}}
+      <p>Use this site to get your weather!</p>
+
+      <form action="">
+        <input type="text" name="" id="" placeholder="Location">
+        {{!-- Remember that the default type for button inside a form is submit --}}
+        {{!-- <button type="submit">search</button> --}}
+        <button>search</button>
+      </form>
+      <p id="message-1"></p>
+      <p id="message-2"></p>
+    </div>
+    {{>footer}}
+  </body>
+</html>
