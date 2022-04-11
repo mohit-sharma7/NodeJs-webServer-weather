@@ -39,22 +39,20 @@ const message2 = document.querySelector("#message-2");
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const location = search.value;
-  message1.textContent = 'Loading........... '
+  message1.textContent = "Loading........... ";
 
-  fetch(`http://localhost:3000/weather?address=${location}`).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.error) {
-          //   console.log("Error: ", data.error);
-          message1.textContent = `Error: ${data.error}`;
-          message2.textContent = "";
-        } else {
-          //   console.log(`Forecast: ${data.forecast}`);
-          message1.textContent = "";
-          message2.textContent = `Location: ${data.location}
+  fetch(`/weather?address=${location}`).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        //   console.log("Error: ", data.error);
+        message1.textContent = `Error: ${data.error}`;
+        message2.textContent = "";
+      } else {
+        //   console.log(`Forecast: ${data.forecast}`);
+        message1.textContent = "";
+        message2.textContent = `Location: ${data.location}
           Forecast: ${data.forecast}`;
-        }
-      });
-    }
-  );
+      }
+    });
+  });
 });

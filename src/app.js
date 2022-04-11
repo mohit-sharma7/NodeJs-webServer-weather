@@ -8,6 +8,7 @@ const geocode = require("./utils/util");
 
 // Importing the express npm package
 const express = require("express");
+const port = process.env.PORT || 3000;
 
 // console.log(__dirname);
 // console.log(path.join(__dirname, "../public"));
@@ -69,7 +70,7 @@ app.get("/products", (req, res) => {
 // Below function decides what to send back when user requests something may be at a specified URL.
 // app.get("", (req, res) => {
 //   //   res.send("Hello Express!");
-  // res.send(`<h1 style="color: cyan;">Hello Express!</h1>`);
+// res.send(`<h1 style="color: cyan;">Hello Express!</h1>`);
 // });
 
 // app.get("/help", (req, res) => {
@@ -184,6 +185,6 @@ app.get("*", (req, res) => {
 });
 
 // To start the server
-app.listen(3000, () => {
-  console.log("Server is up on port 3000.");
+app.listen(port, () => {
+  console.log("Server is up on port " + port);
 });
